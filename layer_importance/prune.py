@@ -1,7 +1,7 @@
 import torch
 
-from network import VGG
-from train import train_network
+from .network import VGG
+from .train import train_network
 
 def prune_network(args, network=None):
     device = torch.device("cuda" if args.gpu_no >= 0 else "cpu")
@@ -15,7 +15,7 @@ def prune_network(args, network=None):
     # prune network
     network = prune_step(network, args.prune_layers, args.prune_channels, args.independent_prune_flag)
     network = network.to(device)
-    print("-*-"*10 + "\n\tPrune network\n" + "-*-"*10)
+    print("-*-"*10 + " Prune network " + "-*-"*10)
     # print(network)
 
     if args.retrain_flag:

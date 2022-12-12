@@ -1,7 +1,7 @@
-from parameter import get_parameter
-from train import train_network
-from evaluate import test_network
-from prune import prune_network
+from .parameter import get_parameter
+from .train import train_network
+from .evaluate import test_network
+from .prune import prune_network
 
 if __name__ == '__main__':
     args = get_parameter()

@@ -2,8 +2,8 @@ import time
 
 import torch
 
-from network import VGG
-from utils import AverageMeter, get_data_set
+from .network import VGG
+from .utils import AverageMeter, get_data_set
 
 def test_network(args, network=None, data_set=None):
     device = torch.device("cuda" if args.gpu_no >= 0 else "cpu")
@@ -53,7 +53,7 @@ def test_step(network, data_loader, device):
     str_ = '%s: Test information, '%time.ctime()
     str_ += 'Data(s): %2.3f, Forward(s): %2.3f, '%(data_time.sum, forward_time.sum)
     str_ += 'Top1: %2.3f, Top5: %2.3f, '%(top1.avg, top5.avg)
-    print("-*-"*10 + "\n\tEvalute network\n" + "-*-"*10)
+    print("-*-"*10 + " Evaluate network " + "-*-"*10)
     print(str_)
     
     return top1.avg, top5.avg

@@ -3,11 +3,11 @@ import time
 import torch
 import torchvision
 
-from network import VGG
-from loss import Loss_Calculator
-from evaluate import accuracy
-from utils import AverageMeter, get_data_set
-from optimizer import get_optimizer
+from .network import VGG
+from .loss import Loss_Calculator
+from .evaluate import accuracy
+from .utils import AverageMeter, get_data_set
+from .optimizer import get_optimizer
 
 def train_network(args, network=None, data_set=None):
     device = torch.device("cuda" if args.gpu_no >= 0 else "cpu")
@@ -29,7 +29,7 @@ def train_network(args, network=None, data_set=None):
         loss_calculator.loss_seq = check_point['loss_seq']
         args.start_epoch = check_point['epoch'] # update start epoch
                 
-    print("-*-"*10 + "\n\tTrain network\n" + "-*-"*10)
+    print("-*-"*10 + " Train network " + "-*-"*10)
     for epoch in range(args.start_epoch, args.epoch):
         # make shuffled data loader
         data_loader = torch.utils.data.DataLoader(data_set, batch_size=args.batch_size, shuffle=True)
