@@ -1,0 +1,3 @@
+[submodule "pytorch_playground"]
+	path = pytorch_playground
+	url = https://github.com/aaron-xichen/pytorch-playground
