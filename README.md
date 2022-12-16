@@ -61,8 +61,71 @@
 
 
 ### VGG16
+#### Pruning
+- Top-1 Accuracy Drop by Pruning upto 90% Filters Iteratively in each Conv Layer
+    - <img src="assets/vgg16_0_layer_importance.png" width="60%"> 
+
+- Top-5 Accuracy Drop by Pruning upto 90% Filters Iteratively in each Conv Layer
+    - <img src="assets/vgg16_0b_layer_importance.png" width="60%"> 
+
+- Number of Parameters in Model after Pruning Iteratively
+    - <img src="assets/vgg16_1_num_params.png" width="60%"> 
+
+- Model Size after Pruning Iteratively
+    - <img src="assets/vgg16_2_size.png" width="60%"> 
+
+- Best and Mean Test Accuracy after Pruning Iteratively
+    - <img src="assets/vgg16_3_accs.png" width="60%"> 
+
+- MACs of Model after Pruning Iteratively
+    - <img src="assets/vgg16_4_macs.png" width="60%"> 
+
+- Drop in Number of Filters in Conv Layers after Pruning Iteratively
+    - <img src="assets/vgg16_5_filter_drop.png" width="60%"> 
+- Model Architecture after Pruning Iteratively
+    - <img src="assets/vgg16_6_table.png" width="60%">
 
 ### VGG16_BN
+#### Pruning
+- Top-1 Accuracy Drop by Pruning upto 90% Filters Iteratively in each Conv Layer
+    - <img src="assets/vgg16bn_0_layer_importance.png" width="60%"> 
+
+- Top-5 Accuracy Drop by Pruning upto 90% Filters Iteratively in each Conv Layer
+    - <img src="assets/vgg16bn_0b_layer_importance.png" width="60%"> 
+
+- Number of Parameters in Model after Pruning Iteratively
+    - <img src="assets/vgg16bn_1_num_params.png" width="60%"> 
+
+- Model Size after Pruning Iteratively
+    - <img src="assets/vgg16bn_2_size.png" width="60%"> 
+
+- Best and Mean Test Accuracy after Pruning Iteratively
+    - <img src="assets/vgg16bn_3_accs.png" width="60%"> 
+
+- MACs of Model after Pruning Iteratively
+    - <img src="assets/vgg16bn_4_macs.png" width="60%">
+
+- Drop in Number of Filters in Conv Layers after Pruning Iteratively
+    - <img src="assets/vgg16bn_5_filter_drop.png" width="60%">
+
+- Model Architecture after Pruning Iteratively
+    - <img src="assets/vgg16bn_6_table.png" width="60%">
+
+#### VGG16 Quantization
+- Top-1 and Top-5 Accuracy with 32-bit to 8-bit Precision
+    - <img src="assets/vgg16_7.png" width="60%"> 
+
+- Metrics with Different Types of Quantization
+    - <img src="assets/vgg16_8.png" width="60%"> 
+
+- Model Size with Different Types of Quantization
+    - <img src="assets/vgg16_9.png" width="60%"> 
+
+- Top-1 and Top-5 Accuracy with Different Types of Quantization
+    - <img src="assets/vgg16_10.png" width="60%">
+
+- Inference Time with Different Types of Quantization
+    - <img src="assets/vgg16_11.png" width="60%"> 
 
 ## Observations
 
