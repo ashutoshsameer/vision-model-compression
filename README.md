@@ -39,16 +39,16 @@
 ## Results 
 
 ### ResNet 18
-- Number of Parameters consistently decrease exponentially with increasing rounds of pruning which is expected
+- Change in Number of Parameters with rounds of pruning
   - <img src="assets/image29.png" width="50%">
-- Drop in Best Accuracy is minimal with the configuration of low percentage pruning of initial layers and higher percentage pruning of deeper layers and Scaling up percentage of pruning of layers result in drastic drop of accuracy across the rounds
+- Change in Best Accuracy with incremental rounds of pruning
    - <img src="assets/image16.png" width="50%">
-- Model Size consistently decrease exponentially with increasing rounds of pruning which is expected as the Number of Params decrease
+- Model Size variation with increasing rounds of pruning
   - <img src="assets/image6.png" width="50%">
 - The number of out filters in the Conv layers keeps reducing with incremental pruning rounds for the configuration [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.3, 0.3]
   - <img src="assets/image14.png" width="50%">
   - <img src="assets/image34.png" width="50%">
-- The behavior of MACs/FLOPs is similar to the trend seen in model size and parameters
+- MACs/FLOPs trend with pruning
   - <img src="assets/image1.png" width="50%">
 - Comparison of Model Size, Accuracy and Inference Time in Post Training Static Quantization from FP32 to INT8 in PyTorch
   - <img src="assets/image25.png" width="50%">
@@ -66,7 +66,17 @@
 
 ## Observations
 
- - Text Here
+ - We experimented with layer importance-based filter pruning  in order to prune more filters from less important layers and maintain accuracy even after five rounds of pruning
+ - Similar to Huang et al [2018] we see that the filters in the deeper layers learn redundant information and deeper layers can be pruned upto 60%  without losing much accuracy
+ - Through our experiments we found that L1 Strategy pruning is more effective than Random Strategy pruning as it considers the absolute magnitude of filter weights
+ - We quantized the model to use 8-bit integers (INT8) instead of 32-bit floats (FP32), and compared performance across different quantization configurations
+ - With quantization, we achieved 4x reduction in model size and number of parameters for VGG16 and ResNet18
+ - With pruning on VGG16, we achieved almost a 50x reduction in number of parameters and model size, and 7.5x reduction in FLOPs with only 1% drop in best top-1 accuracy and increased mean top-1 accuracy
+ - With pruning on ResNet 18, we achieved almost a 52x reduction in number of parameters and model size, and 19x reduction in FLOPs with only 1% drop in mean top-1 accuracy
+ - Number of Parameters consistently decrease exponentially with increasing rounds of pruning which is expected
+ - Drop in Best Accuracy is minimal with the configuration of low percentage pruning of initial layers and higher percentage pruning of deeper layers and Scaling up percentage of pruning of layers result in drastic drop of accuracy across the rounds
+ - Model Size consistently decrease exponentially with increasing rounds of pruning which is expected as the Number of Params decrease
+ - The behavior of MACs/FLOPs is similar to the trend seen in model size and parameters
 
 ## References:
  - https://github.com/VainF/Torch-Pruning
