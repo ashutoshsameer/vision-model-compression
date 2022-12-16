@@ -12,17 +12,39 @@
 
 ## Repo Description
 
- - Description Here
+> We worked with ResNet18 and VGG16 Architectures on the CIFAR-10 dataset
+```
+   .
+   ├── VGG16                   # Folder containing all VGG16 and VGG16_BN code and notebooks
+   │   ├── Torch_Pruning       # Contains modules for filter pruning in Conv layers
+   │   │   └── ...             # Code Referenced from https://github.com/VainF/Torch-Pruning with modifications             
+   │   ├── layer_importance    # Contains modules for computing importance of Conv layers
+   │   │   └── ...             # Code Referenced from https://github.com/tyui592/Pruning_filters_for_efficient_convnets with modifications              
+   │   ├── *.ipynb             # Contains all notebooks for layer importance computation, pruning, fixed-point quantization, and static quantization for VGG16 and VGG16_BN
+   ├── ResNet18                # Folder containing all ResNet18 code and notebooks
+   │   ├── Torch_Pruning       # Contains modules for filter pruning in Conv layers
+   │   │   └── ...             # Code Referenced from https://github.com/VainF/Torch-Pruning with modifications             
+   │   ├── quantize_new        # Contains code for training and fixed point quantization of ResNet18 model
+   │   │   └── ...             # Code Referenced from https://github.com/aaron-xichen/pytorch-playground with modifications             
+   │   ├── *.ipynb             # Contains all notebooks for pruning, fixed-point quantization, static quantization, quantization aware training for ResNet18
+   └── assets
+       └── image*.png          # Contains all results and table images for README
 
+```
 
 ## Commands to Execute
 
- - Description Here
+ - All the Jupyter Notebooks are directly executable and contain the required imports to necessary modules.
 
 ## Results 
-- 
+
+### ResNet 18
 - ![Alt text](assets/image1.png?raw=true "Title")
 
+
+### VGG16
+
+### VGG16_BN
 
 ## Observations
 
@@ -34,5 +56,6 @@
  - https://github.com/Forggtensky/Quantize_Pytorch_Vgg16AndMobileNet
  - https://github.com/aaron-xichen/pytorch-playground
  - https://github.com/leimao/PyTorch-Static-Quantization
+ - https://github.com/tyui592/Pruning_filters_for_efficient_convnets
 
 
