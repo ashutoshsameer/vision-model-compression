@@ -39,7 +39,25 @@
 ## Results 
 
 ### ResNet 18
-- ![Alt text](assets/image1.png?raw=true "Title")
+- Number of Parameters consistently decrease exponentially with increasing rounds of pruning which is expected
+  - ![Alt text](assets/image29.png?raw=true "Title")
+- Drop in Best Accuracy is minimal with the configuration of low percentage pruning of initial layers and higher percentage pruning of deeper layers and Scaling up percentage of pruning of layers result in drastic drop of accuracy across the rounds
+   - ![Alt text](assets/image16.png?raw=true "Title")
+- Model Size consistently decrease exponentially with increasing rounds of pruning which is expected as the Number of Params decrease
+  - ![Alt text](assets/image6.png?raw=true "Title")
+- The number of out filters in the Conv layers keeps reducing with incremental pruning rounds for the configuration [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.3, 0.3]
+  - ![Alt text](assets/image14.png?raw=true "Title")
+  - ![Alt text](assets/image34.png?raw=true "Title")
+- The behavior of MACs/FLOPs is similar to the trend seen in model size and parameters
+  - ![Alt text](assets/image1.png?raw=true "Title")
+- Comparison of Model Size, Accuracy and Inference Time in Post Training Static Quantization from FP32 to INT8 in PyTorch
+  - ![Alt text](assets/image25.png?raw=true "Title")
+- Quantization Aware Training
+  - ![Alt text](assets/image31.png?raw=true "Title")
+- Fixed Point Quantization
+  - ![Alt text](assets/image2.png?raw=true "Title")
+- Sparse Pruning + Quantization of ResNet 18 using Tensorflow
+  - ![Alt text](assets/image28.png?raw=true "Title")
 
 
 ### VGG16
